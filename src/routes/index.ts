@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import appointmentRouter from './appointments.routes';
+
 import appointmentsRouter from './appointments.routes';
+import usersRouter from './users.routes';
 
 const routes = Router();
 
 routes.use('/appointments', appointmentsRouter);
+routes.use('/users', usersRouter);
 
 routes.get('/', (request, response) => {
   const { name, email } = request.body;
